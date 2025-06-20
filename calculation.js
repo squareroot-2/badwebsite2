@@ -136,6 +136,10 @@ for (let i = 0; i < calculatorButtons.length; i++)
                 {
                     userError = "Syntax Error";
                 }
+                else if (caughtError.includes("ReferenceError"))
+                {
+                    userError = "Reference Error: Probably impossible";
+                }
                 else
                 {
                     userError = "Unexpected error: " + error;
@@ -155,7 +159,41 @@ for (let i = 0; i < calculatorButtons.length; i++)
         {
             if (calculatorButtons[i].getAttribute("specialValue") == "Backspace")
             {
-                calculatorText.innerHTML = calculatorText.innerHTML.substring(0,(calculatorText.innerHTML.length-1));
+                function isalpha(c)
+                {
+                    return c.toLowerCase() != c.toUpperCase();
+                }  
+
+                let typeText = calculatorText.innerHTML.replace(/\s/g, "");
+                let specialcharacter = typeText.length-1;
+
+                if (typeText.length > 0 && isalpha(typeText[typeText.length-1]))
+                {
+                    for (let i = (typeText.length - 1); i >= 0; i--)
+                    {
+                        if (isalpha(typeText[i]) == false || i == 0) 
+                        {
+                            if (i >= 4 && typeText.substring(i-4, i) == "Math")
+                            {
+                                specialcharacter = i - 4;
+                                break
+                            }
+
+                            if (i == 0)
+                            {
+                                specialcharacter = 0
+                            }
+                            else
+                            {
+                                specialcharacter = i + 1;
+                                break
+                            }
+                        }
+                    }
+                }
+
+                console.log("sc:" + specialcharacter);
+                calculatorText.innerHTML = typeText.substring(0, specialcharacter);
             }
             else
             {
