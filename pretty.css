@@ -1,0 +1,231 @@
+.jersey-10-regular {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.black {
+    background: rgba(0,0,0,0.3);
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -10;
+}
+
+.calculator_title 
+{
+    font-size: 5vw;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.centered
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered_x
+{
+    display: flex;
+    justify-content: center;
+}
+
+.centered_y
+{
+    display: flex;
+    align-items: center;
+}
+
+.calc_UI 
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    background-color: gray;
+
+    border-color: darkgray;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 50px 10px darkslategray;
+
+    margin-top: 5vh;
+    height: 90vh;
+    width: 30vw;
+
+    min-width: 400px;
+}
+
+.calc_UI_text
+{
+    background-color: darkgray;
+    
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+
+    margin-top: 7.5%;
+    height: 10%;
+    width: 80%;
+}
+
+.calc_UI_bigbox
+{
+    background-color: darkgray;
+
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+
+    height: 75%;
+    width: 80%;
+
+    flex-direction: column;
+    gap: 2.5%;
+}
+
+
+.calc_button_alignment
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+
+    border-radius: 20px;
+
+    height: 70%;
+    width: 100%;
+}
+
+.calc_baby_button_alignment
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+
+    border-radius: 20px;
+
+    height: 25%;
+    width: 95%;
+}
+
+.calc_UI_babybutton
+{
+    background-color: black;
+    border-width: 1%;
+    border-style: solid;
+    border-color: white;
+    border-radius: 20px;
+
+    height: 13.75%;
+    width: 18%;
+
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.babierbuttons
+{
+    height: 17.5%;
+    font-size: 1.25vh;
+    width: 18%;
+}
+
+.calc_UI_babybutton:hover
+{
+    background-color: darkslategrey;
+    border-color: gray;
+
+    transition: background-color 250ms ease-in-out;
+}
+
+.calc_UI_babybutton:active
+{
+    background-color: green;
+    border-color: darkgreen;
+
+    transition: background-color 0ms ease-in-out;
+}
+
+.robotic_font
+{
+    font-family: "Jersey 10", Helvetica, sans-serif;
+    font-size: 3vh;
+    text-align: left;
+    font-stretch:inherit;
+
+    overflow-x: scroll;
+    scrollbar-width: none;
+
+    width: 80%;
+}
+
+.cornerText
+{
+    color:rgba(0,0,0,0);
+    font-family: "Jersey 10";
+
+    position: fixed;
+    left: .25%;
+    top: 97.5%;
+}
+
+.cornerText_top
+{
+    color:rgba(0,0,0,1);
+    font-family: "Jersey 10";
+
+    position: fixed;
+    left: .25%;
+}
+
+.pietrophy
+{
+    display: none;
+
+    background-image: url("yourmytrophy.png");
+    background-size: 100% 100%;
+
+    width: 10%;
+    height: 20%;
+
+    position: fixed;
+    right: 5%;
+    top:25%;
+}
+
+.etrophy
+{
+    display: none;
+    background-image: url("leonhardeulernumbertrophy.png");
+    background-size: 100% 100%;
+
+    width: 10%;
+    height: 20%;
+
+    position: fixed;
+    right: 5%;
+    top:50%;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="pretty.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- corner texts -->
+    <div class="cornerText_top">the calculater</div>
+    <div class="cornerText" id="secretscore">scorE: 1</div>
+
+    <div class="pietrophy" id="pt"></div>
+    <div class="etrophy" id="et"></div>
+        
+    <audio id="press">
+        <source src="calc.wav" type="audio/wav">   
+    </audio>
+
+    <div class="centered black">
+        <div class="calc_UI" id="calculator">
+            <div class="calc_UI_text centered">
+                <div class="robotic_font" id="result">
+                    
+                </div>
+            </div>
+
+            <div class="calc_UI_bigbox centered">
+                <div class="calc_baby_button_alignment">
+                    <!-- 1st Row -->
+                    
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.PI">π</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.E">e</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.log(">ln</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.ln(">log</div>
+
+                    <!-- 2nd Row -->
+                    
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.sqrt(">√</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.cbrt">3√</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="**2">^2</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="**">^n</div>
+
+                    <!-- 3rd Row -->
+                    
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.abs(">|n|</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.sin(">sin(n)</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.cos(">cos(n)</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.tan(">tan(n)</div>
+
+                    <!-- 4th Row -->
+                    
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.asin(">sin^-1</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.acos(">cos^-1</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="Math.atan(">tan^-1</div>
+                    <div class="calc_UI_babybutton babierbuttons centered" specialValue="*0.01">%</div>
+                </div>
+                <!-- BIG BUTTONS -->
+                <div class="calc_button_alignment">
+                    <!-- 1st Row -->
+                    <div class="calc_UI_babybutton centered">(</div>
+                    <div class="calc_UI_babybutton centered">)</div>
+                    <div class="calc_UI_babybutton centered" specialValue="Backspace">←</div>
+                    <div class="calc_UI_babybutton centered">C</div>
+
+                    <!-- 2nd Row -->
+                    <div class="calc_UI_babybutton centered">1</div>
+                    <div class="calc_UI_babybutton centered">2</div>
+                    <div class="calc_UI_babybutton centered">3</div>
+                    <div class="calc_UI_babybutton centered">+</div>
+
+                    <!-- 3rd Row -->
+                    <div class="calc_UI_babybutton centered">4</div>
+                    <div class="calc_UI_babybutton centered">5</div>
+                    <div class="calc_UI_babybutton centered">6</div>
+                    <div class="calc_UI_babybutton centered">-</div>
+                    
+                    <!-- 4th Row -->
+                    <div class="calc_UI_babybutton centered">7</div>
+                    <div class="calc_UI_babybutton centered">8</div>
+                    <div class="calc_UI_babybutton centered">9</div>
+                    <div class="calc_UI_babybutton centered">*</div>
+
+                    <!-- 5th Row -->
+                    <div class="calc_UI_babybutton centered">0</div>
+                    <div class="calc_UI_babybutton centered">.</div>
+                    <div class="calc_UI_babybutton centered">/</div>
+                    <div class="calc_UI_babybutton centered">=</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculation.js"></script>
+</body>
+
+</html>
