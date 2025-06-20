@@ -72,7 +72,7 @@ function getCookie(cname) {
 // Resize calculator event
 window.addEventListener("resize", function()
 {
-    if (window.screen.width <= 500)
+    if (window.screen.width <= 600)
     {
         calculator.style.width = "90vw";
     }
@@ -138,7 +138,7 @@ for (let i = 0; i < calculatorButtons.length; i++)
                 }
                 else if (caughtError.includes("ReferenceError"))
                 {
-                    userError = "Reference Error: Probably impossible";
+                    userError = "Algebraic calcaution error.";
                 }
                 else
                 {
