@@ -70,6 +70,16 @@ function getCookie(cname) {
 }
 
 // Resize calculator event
+
+if (window.screen.width <= 600)
+{
+    calculator.style.width = "90vw";
+}
+else
+{
+    calculator.style.width = "30vw";
+}
+
 window.addEventListener("resize", function()
 {
     if (window.screen.width <= 600)
