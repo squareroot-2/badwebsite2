@@ -30,6 +30,7 @@ else
     pieTrophy = getCookie("piTrophy");
     eTrophy = getCookie("eTrophy");
 
+    console.log("somethings not right with gitpages mannn")
     if (eTrophy == "true")
     {
         et_visual.style.display = "block"
