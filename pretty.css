@@ -65,8 +65,8 @@ html, body {
     margin-top: 5vh;
     height: 90vh;
     width: 30vw;
-
-    min-width: 400px;
+    
+    min-width: 200px;
 }
 
 .calc_UI_text

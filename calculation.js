@@ -1,4 +1,4 @@
-// Responsive based on screen size
+// Responsive b ased on screen size
 let calculator = document.getElementById("calculator")
 
 // Get textbox
@@ -27,12 +27,15 @@ if (document.cookie == "")
 }
 else
 {
-    if (eTrophy == true)
+    pieTrophy = getCookie("piTrophy");
+    eTrophy = getCookie("eTrophy");
+
+    if (eTrophy == "true")
     {
         et_visual.style.display = "block"
     }
 
-    if (pieTrophy == true)
+    if (pieTrophy == "true")
     {
         pt_visual.style.display = "block"
     }
@@ -71,26 +74,25 @@ function getCookie(cname) {
 
 // Resize calculator event
 
-if (window.screen.width <= 600)
+function calcResize()
 {
-    calculator.style.width = "90vw";
-}
-else
-{
-    calculator.style.width = "30vw";
-}
-
-window.addEventListener("resize", function()
-{
-    if (window.screen.width <= 600)
+    let whRatio = (window.screen.width/window.screen.height);
+    if (whRatio <= 0.6)
     {
         calculator.style.width = "90vw";
     }
     else
     {
-        calculator.style.width = "30vw";
+        calculator.style.width = "35vw";
     }
+}
+
+window.addEventListener("resize", function()
+{
+    calcResize();
 });
+
+calcResize();
 
 // Add calculator button functionality
 for (let i = 0; i < calculatorButtons.length; i++)
@@ -115,8 +117,8 @@ for (let i = 0; i < calculatorButtons.length; i++)
 
             try
             {
-                let result = eval(mathExpression);
-                
+                let result = math.evaluate(mathExpression);
+
                 if (Math.abs(result) < Number.EPSILON)
                 {
                     result = 0;
@@ -126,6 +128,37 @@ for (let i = 0; i < calculatorButtons.length; i++)
                 {
                     calculatorText.innerHTML = "Don't do that.";
                     errorMsg = true;
+                }
+                else if (typeof(result) == "object")
+                {
+                    real = result["re"];
+                    imag = result["im"];
+                    
+                    // Sometimes mathjs calculates inside of an array with element 0
+                    if (real == undefined || imag == undefined)
+                    {
+                        real = result["entries"][0].re;
+                        imag = result["entries"][0].im;
+                        
+                        // Sometimes even real calculations are inside objects
+                        if (real == undefined)
+                        {
+                            real = result["entries"][0];
+                            imag = 0;
+                        }
+                    }
+
+                    let textShowcase = `${real} + ${imag}i`;
+                    if (real == 0)
+                    {
+                        textShowcase = `${imag}i`;
+                    }
+                    else if (imag == 0)
+                    {
+                        textShowcase = `${real}`
+                    }
+
+                    calculatorText.innerHTML = textShowcase;
                 }
                 else if (mathExpression.includes("/0") || isNaN(result))
                 {
@@ -146,9 +179,9 @@ for (let i = 0; i < calculatorButtons.length; i++)
                 {
                     userError = "Syntax Error";
                 }
-                else if (caughtError.includes("ReferenceError"))
+                else if (caughtError.includes("Undefined Symbol"))
                 {
-                    userError = "Algebraic calcaution error.";
+                    userError = "Algebraic syntax error.";
                 }
                 else
                 {
@@ -158,8 +191,6 @@ for (let i = 0; i < calculatorButtons.length; i++)
                 calculatorText.innerHTML = userError;
                 errorMsg = true;
             }
-
-            console.log(eval(mathExpression));
         }
         else if (buttonText == "C")
         {
@@ -202,12 +233,10 @@ for (let i = 0; i < calculatorButtons.length; i++)
                     }
                 }
 
-                console.log("sc:" + specialcharacter);
                 calculatorText.innerHTML = typeText.substring(0, specialcharacter);
             }
             else
             {
-                console.log(calculatorButtons[i].getAttribute("specialValue"));
                 calculatorText.innerHTML = calculatorText.innerHTML + calculatorButtons[i].getAttribute("specialValue");
             }
         }
